@@ -1,29 +1,97 @@
-# Rubik's Cube Project
+# Rubik's Cube Solver in C++
 
 ## 📌 About the Project
-The **Rubik's Cube Project** is an implementation of a Rubik's Cube simulator and solver.  
-It allows users to:
-- Represent and manipulate a Rubik’s Cube in code.
-- Perform rotations and moves on the cube.
-- Apply solving algorithms to reach the solved state.
-- (Planned) Integrate with **OpenCV** to scan real cube colors using a webcam and feed them into the solver.
 
-This project is designed to help understand cube notations, state representations, and solving techniques while also serving as a base for real-world Rubik’s Cube solving automation.
+This project is a C++ implementation of a Rubik's Cube simulator and solver. It models the cube using multiple internal representations and implements several classical search algorithms to solve scrambled cube states.
 
----
+The project focuses on efficient state representation, graph search techniques, and algorithmic optimization. It also serves as a learning project for understanding search algorithms, heuristic-based solving, and object-oriented software design.
+
+### Key Highlights
+
+- Multiple Rubik's Cube representations
+- BFS (Breadth First Search)
+- DFS (Depth First Search)
+- IDDFS (Iterative Deepening DFS)
+- IDA* (Iterative Deepening A*)
+- Pattern Database optimization
+- Modular C++ architecture
+- Planned OpenCV-based cube scanner
 
 ## 🛠 Features
-- Cube representation (3D state stored in code).
-- Basic moves and rotations (R, L, U, D, F, B with variants).
-- Scramble generation.
-- Solver module (work in progress).
-- Planned integration with **OpenCV** for webcam cube scanning.
 
----
+- Simulates a complete 3×3 Rubik's Cube.
+- Supports standard cube rotations and move sequences.
+- Implements multiple cube representations for efficient state management.
+- Solves scrambled cube states using:
+  - Breadth First Search (BFS)
+  - Depth First Search (DFS)
+  - Iterative Deepening DFS (IDDFS)
+  - Iterative Deepening A* (IDA*)
+- Uses Pattern Databases to improve heuristic search performance.
+- Modular object-oriented architecture for easy extension.
+- Planned OpenCV integration for real-time cube scanning.
 
-## 🚀 Installation & Setup
+## 💻 Tech Stack
 
-Clone the repository:
+- **Language:** C++
+- **Build System:** CMake
+- **Algorithms:** BFS, DFS, IDDFS, IDA*
+- **Data Structures:** Arrays, Bitboards, Pattern Databases
+- **Concepts:** Object-Oriented Programming, Graph Search, Heuristic Search
+
+## 📂 Project Structure
+
+```text
+Rubiks-Cube-Solver
+│── Model/
+│── Solver/
+│── PatternDatabases/
+│── Scanner/
+│── bits/
+│── main.cpp
+│── CMakeLists.txt
+│── README.md
+```
+
+## 🧠 Algorithms Implemented
+
+| Algorithm | Purpose |
+|----------|---------|
+| BFS | Finds the shortest solution for small search depths |
+| DFS | Explores cube states using depth-first traversal |
+| IDDFS | Combines DFS memory efficiency with BFS completeness |
+| IDA* | Performs heuristic-guided search using iterative deepening |
+| Pattern Database | Provides heuristic estimates to speed up IDA* |
+
+## 🚀 Future Improvements
+
+- Complete OpenCV-based cube scanner.
+- Improve heuristic accuracy for faster solving.
+- Develop a graphical user interface (GUI).
+- Support larger cube variants (4×4, 5×5).
+- Optimize memory usage for large search spaces.
+
+## ⚙️ Build Instructions
+
+### Clone the repository
+
 ```bash
-git clone https://github.com/RATAN1369/RubiksCubeProject.git
-cd RubiksCubeProject
+git clone https://github.com/Shokhee22/Rubiks-Cube-Solver.git
+```
+
+### Build using CMake
+
+```bash
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
+
+### Run
+
+```bash
+./RubiksCubeSolver
+```
+
+
